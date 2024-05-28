@@ -10,7 +10,8 @@ html {
 
 .page {
   margin: auto;
-  padding: 133px 30px;
+  display: flex;
+  align-items: center;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -79,8 +80,9 @@ ol {
 
 .search-form__fieldset-title {
   margin-bottom: 5px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
+  line-height: 1.2;
 }
 
 .search-form__fieldset {
@@ -91,6 +93,7 @@ ol {
   display: flex;
   align-items: center;
   width: fit-content;
+  cursor: pointer;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -159,10 +162,6 @@ ol {
   cursor: pointer;
 }
 
-.search-form__submit-button {
-  align-self: end;
-}
-
 .button {
   border: 1px solid #fff;
   color: #fff;
@@ -171,6 +170,8 @@ ol {
   font-size: inherit;
   background-color: transparent;
   cursor: pointer;
+  line-height: 1.2;
+
 }
 
 .button:focus {
@@ -188,11 +189,12 @@ ol {
 
 .button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 1px;
+  outline-offset: -3px;
 }
 
 .search-form__submit-button {
   padding: 6px 73.5px;
+  align-self: end;
 }
 
 .more-button {
@@ -203,13 +205,17 @@ ol {
 
 /* content card */
 
+.content__details {
+  align-self: start;
+}
+
 .content__list {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-height: 298px;
-  overflow: scroll;
+block-size: 298px;
+  overflow-y: auto;
 }
 
 .title {
@@ -235,11 +241,7 @@ ol {
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
-}
-
-.content__card-link {
-  color: #fff;
-  text-decoration: none;
+  gap: 6px;
 }
 
 .content__video-card-title {
@@ -247,6 +249,11 @@ ol {
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
+  line-height: 1;
+  max-inline-size: 170px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -262,6 +269,9 @@ ol {
 
 .content__card-link {
   display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 2px;
 }
 
 .content__card-link_current {
